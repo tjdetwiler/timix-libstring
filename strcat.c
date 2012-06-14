@@ -18,10 +18,10 @@
  *  along with Timix. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <string.h>
+#include <string-impl.h>
 
-char *strcat(const char *str1, const char *str2)
+char *strcat(char *s1, const char *s2)
 {
-    return NULL;
+    return _strcat(*s1, *s2);
 }
 

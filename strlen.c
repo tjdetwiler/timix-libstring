@@ -18,10 +18,10 @@
  *  along with Timix. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <string.h>
+#include <string-impl.h>
 
-int strlen(const char *string)
+int strlen(const char *s)
 {
-    return -ENOSYS;
+    return _strlen(s);
 }
 

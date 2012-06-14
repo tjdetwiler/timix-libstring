@@ -18,10 +18,10 @@
  *  along with Timix. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <string.h>
+#include <string-impl.h>
 
-char* strcpy(const char *restrict dest, const char *restrict src)
+char* strcpy(char *restrict dest, const char *restrict src)
 {
-    return NULL;
+    return _strcpy(dest, src);
 }
 

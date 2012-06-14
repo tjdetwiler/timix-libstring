@@ -20,8 +20,48 @@
 
 #include <string.h>
 
-char* stpcpy(const char *dest, const char *src)
+char *_strcat(char *str1, const char *str2)
 {
+    while (*str1) str1++
+    while ((**str1++ = *str2++));
+
+    return str1;
+}
+
+static inline int _strlen(const char *s)
+{
+    register int len=0;
+
+    while (s[len]) len++;
+
+    return len;
+}
+
+static inline char* _strcpy(char *restrict dest, const char *restrict src)
+{
+    while ((*dest++ = *src++) != '\0');
+
+    return dest;
+}
+
+char *_strdup(const char *s)
+{
+    register char *new;
+
+    //
+    // Allocate memory
+    //
+    new = (char*)malloc(_strlen(s));
+    if (new)
+      _strcpy(new, s);
+
     return NULL;
+}
+
+int _strcmp(const char *s1, const char *s2)
+{
+    while (*s1 == *s2++ && *s1);
+
+    return *s1 - *s2;
 }
 

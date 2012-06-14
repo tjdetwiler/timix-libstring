@@ -18,10 +18,10 @@
  *  along with Timix. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <string.h>
+#include <string-impl.h>
 
-char *strdup(const char *str1)
+char *strdup(const char *s)
 {
-    return NULL;
+    return _strdup(s);
 }
 
