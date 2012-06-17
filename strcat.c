@@ -22,6 +22,6 @@
 
 char *strcat(char *s1, const char *s2)
 {
-    return _strcat(*s1, *s2);
+    return _strcat(s1, s2);
 }
 

@@ -20,8 +20,8 @@
 
 #include <string-impl.h>
 
-char *strncpy(char *str1, const char *str2, size_t n)
+void* memset(void *to, int c, size_t len)
 {
-    return _strncpy(str1, str2, n);
+    return _memset(to, c, len);
 }
 

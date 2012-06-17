@@ -20,8 +20,8 @@
 
 #include <string-impl.h>
 
-char *strncpy(char *str1, const char *str2, size_t n)
+const char *strchr(const char *s, int c)
 {
-    return _strncpy(str1, str2, n);
+    return _strchr(s, c);
 }
 

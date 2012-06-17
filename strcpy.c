@@ -20,7 +20,7 @@
 
 #include <string-impl.h>
 
-char* strcpy(char *restrict dest, const char *restrict src)
+char* strcpy(char *dest, const char *src)
 {
     return _strcpy(dest, src);
 }

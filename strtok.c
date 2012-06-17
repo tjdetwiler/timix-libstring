@@ -2,7 +2,7 @@
  * Copyright(C) 2012, Tim Detwiler <tdetwile@andrew.cmu.edu>
  * Copyright(C) 2012, Tim Shields <tshield1@andrew.cmu.edu>
  *
- *  This file is part of the Timix.
+ *  This file is part of the Timix Kernel.
  *
  *  Timix is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
 
 #include <string-impl.h>
 
-char *strncpy(char *str1, const char *str2, size_t n)
+char *strtok(char *str, const char *delim)
 {
-    return _strncpy(str1, str2, n);
+    return _strtok(str, delim);
 }
 

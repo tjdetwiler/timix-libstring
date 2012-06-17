@@ -22,15 +22,15 @@
 
 #include <stdlib.h>
 
-size_t strlen(const char *str);
+int strlen(const char *str);
 char *strcpy(char *str1, const char *str2);
-char *strncpy(const char *str1, const char *str2, size_t n);
+char *strncpy(char *str1, const char *str2, size_t n);
 char *strdup(const char *str);
 char *strcat(char *dest, const char *src);
 char *strncat(const char *str1, const char *str2, size_t n);
 int strcmp(const char *str1, const char *str2);
 int strncmp(const char *str1, const char *str2, size_t n);
-char *strchr(const char *str, int c);
+const char *strchr(const char *str, int c);
 char *strrchr(const char *str, int c);
 char *strstr(const char *haystack, const char *needle);
 char *strtok(char *str, const char *delim);

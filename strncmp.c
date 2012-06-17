@@ -18,10 +18,10 @@
  *  along with Timix. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <string.h>
+#include <string-impl.h>
 
 int strncmp(const char *str1, const char *str2, size_t n)
 {
-    return -ENOSYS;
+    return _strncmp(str1, str2, n);
 }
 
