@@ -113,8 +113,6 @@ find_tok:
     }
     ret = tok-1;
 
-    printf("Token start: %s\n", ret);
-    
     //
     // Find end of token
     //
