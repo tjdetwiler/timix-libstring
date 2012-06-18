@@ -59,14 +59,11 @@ static inline char *_strdup(const char *s)
 {
     register char *new;
 
-    //
-    // Allocate memory
-    //
     new = (char*)malloc(_strlen(s));
     if (new)
       _strcpy(new, s);
 
-    return NULL;
+    return new;
 }
 
 static inline int _strcmp(const char *s1, const char *s2)
@@ -98,35 +95,40 @@ static inline void *_memset(void *to_, int c, size_t len)
 static inline char *_strtok(char *str, const char *delim)
 {
     static char *tok;
+    register char* delimp;
     char *ret;
-    int i, c;
+    int  c;
 
     if (str) tok = str;
+    if (!tok) return NULL;
 
     //
     // Find start of token
     //
 find_tok:
     c = *tok++;
-    for (i=0; delim[i]; ++i) {
-        if (c == delim[i])
+    for (delimp=delim; *delimp; delimp++) {
+        if (c == *delimp)
             goto find_tok;
     }
+    ret = tok-1;
+
+    printf("Token start: %s\n", ret);
     
-    ret = tok;
     //
     // Find end of token
     //
     do {
-        if (c == '\0')
-            tok = NULL;
-            return NULL;
-
-        for (i=0; delim[i]; ++i) {
-            if (c == delim[i])
+        for (delimp=delim; *delimp; delimp++) {
+            if (c == *delimp) {
+                *(tok-1) = '\0';
                 return ret;
+            }
         }
     } while((c = *tok++));
+
+    tok = NULL;
+    return ret;
 }
 
 static inline const char *_strchr(const char *s_, int c_)
